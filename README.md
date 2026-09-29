@@ -164,3 +164,45 @@ flowchart LR
 ```
 
 Cada etapa será utilizada como base para a seguinte, mantendo o foco na mesma interação adversarial.
+
+---
+
+## 7. Atores e objetivos
+
+A interação analisada envolve participantes com objetivos diferentes, que podem influenciar o resultado da reputação pública.
+
+| Ator                   | Papel                                            | Objetivo                                                     |
+| ---------------------- | ------------------------------------------------ | ------------------------------------------------------------ |
+| 👤 **Comprador**       | Realiza a compra e pode avaliar                  | Representar sua experiência e obter uma experiência adequada |
+| 🏪 **Vendedor**        | Fornece o produto e participa do fluxo do pedido | Realizar vendas e preservar ou melhorar sua reputação        |
+| ⚙️ **Plataforma**      | Aplica as regras e processa as avaliações        | Manter a reputação como um sinal útil e confiável            |
+| 👀 **Outros usuários** | Consultam a reputação                            | Utilizar informações confiáveis para decidir sobre compras   |
+
+### Conflito de interesses
+
+O principal conflito ocorre quando o interesse do vendedor em **manter uma reputação favorável** pode divergir do objetivo de preservar a reputação como um **sinal fiel das experiências dos compradores**.
+
+A interação pode ser resumida como:
+
+```mermaid
+flowchart LR
+    C["👤 Comprador"] -->|"avaliação"| P["⚙️ Plataforma"]
+    V["🏪 Vendedor"] -->|"pedido / reputação"| P
+    P -->|"reputação pública"| U["👀 Outros usuários"]
+    U -->|"decisão de compra"| V
+```
+
+---
+
+## 8. Objetivos estratégicos
+
+Para a análise posterior, os interesses centrais podem ser resumidos em:
+
+| Participante           | Interesse estratégico                                                          |
+| ---------------------- | ------------------------------------------------------------------------------ |
+| 👤 **Comprador**       | Registrar ou não uma avaliação de acordo com sua experiência e seus incentivos |
+| 🏪 **Vendedor**        | Maximizar os benefícios de sua reputação pública                               |
+| ⚙️ **Plataforma**      | Preservar a confiabilidade do mecanismo de reputação                           |
+| 👀 **Outros usuários** | Tomar decisões com base em informações confiáveis                              |
+
+Essa diferença de objetivos é o ponto de partida para analisar **comportamentos estratégicos, exploração das regras e adaptação** nas próximas etapas.
