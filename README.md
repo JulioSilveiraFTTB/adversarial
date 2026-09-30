@@ -309,3 +309,66 @@ Por exemplo, se o estado do pedido influencia a disponibilidade da avaliação e
 Essa relação será utilizada nos próximos modelos para identificar quais ações podem gerar vantagem e como o sistema pode responder a elas.
 
 ---
+
+## 14. Modelo estratégico estático
+
+Para representar a interação de forma simplificada, consideramos dois participantes centrais:
+
+- 👤 **Comprador**
+- 🏪 **Vendedor**
+
+A plataforma permanece como o mecanismo que aplica as regras do sistema. Neste modelo estático, suas regras são consideradas **fixas**.
+
+### 🎯 Ações dos participantes
+
+O comprador possui duas estratégias simplificadas:
+
+| Código | Estratégia            | Descrição                                                              |
+| ------ | --------------------- | ---------------------------------------------------------------------- |
+| **A1** | Avaliação honesta     | Registra uma avaliação compatível com sua experiência                  |
+| **A2** | Abstenção estratégica | Não registra uma avaliação, preservando sua posição diante do vendedor |
+
+O vendedor também possui duas estratégias:
+
+| Código | Estratégia                 | Descrição                                                                 |
+| ------ | -------------------------- | ------------------------------------------------------------------------- |
+| **B1** | Comportamento transparente | Permite que o processo de avaliação represente a experiência do comprador |
+| **B2** | Influência estratégica     | Utiliza as regras disponíveis para favorecer sua reputação                |
+
+---
+
+## 15. Matriz de payoffs
+
+Os valores representam **utilidade relativa**, e não valores monetários observados no sistema.
+
+| 👤 Comprador × 🏪 Vendedor     | **B1 — Transparente** | **B2 — Influência estratégica** |
+| ------------------------------ | --------------------: | ------------------------------: |
+| **A1 — Avaliação honesta**     |            **(2, 2)** |                      **(0, 3)** |
+| **A2 — Abstenção estratégica** |            **(1, 2)** |                      **(3, 3)** |
+
+**Primeiro valor:** payoff do comprador.  
+**Segundo valor:** payoff do vendedor.
+
+### 🔎 Interpretação
+
+- **(A1, B1) = (2,2):** o comprador registra uma avaliação honesta e o vendedor mantém um comportamento transparente. Ambos obtêm um resultado equilibrado.
+- **(A1, B2) = (0,3):** o comprador avalia honestamente, mas o vendedor utiliza as regras em benefício próprio, reduzindo a utilidade da avaliação para o comprador.
+- **(A2, B1) = (1,2):** o comprador deixa de avaliar mesmo diante de um comportamento transparente do vendedor.
+- **(A2, B2) = (3,3):** ambos adotam estratégias orientadas ao próprio benefício, produzindo alto payoff individual no modelo, mas reduzindo a confiabilidade do sinal público.
+
+---
+
+## 16. O que a matriz representa?
+
+O modelo mostra que uma decisão individual pode ser racional para um participante mesmo quando o resultado coletivo para o sistema é prejudicado.
+
+O ponto central não é determinar qual comportamento é "certo" ou "errado", mas observar como as **regras existentes alteram os incentivos**.
+
+A matriz será utilizada no próximo passo para identificar:
+
+1. melhores respostas de cada participante;
+2. existência de estratégias dominantes;
+3. possíveis equilíbrios de Nash;
+4. relação entre o equilíbrio individual e a confiabilidade da reputação pública.
+
+---
