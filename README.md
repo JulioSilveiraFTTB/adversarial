@@ -372,3 +372,59 @@ A matriz será utilizada no próximo passo para identificar:
 4. relação entre o equilíbrio individual e a confiabilidade da reputação pública.
 
 ---
+
+## 17. Modelo estratégico dinâmico
+
+O comportamento dos participantes é analisado ao longo de rodadas sucessivas. O resultado de uma interação passa a ser informação para a próxima decisão, permitindo que vendedor e plataforma adaptem suas estratégias.
+
+O ciclo utilizado é:
+
+**ação → resposta → observação → adaptação**
+
+### Rodada 1
+
+**Ação:** o vendedor utiliza as regras disponíveis para favorecer sua reputação.
+
+**Resposta:** o sistema processa a avaliação e atualiza a reputação publicada.
+
+**Observação:** o vendedor observa o efeito produzido pela estratégia sobre o sinal público.
+
+**Adaptação:** caso a estratégia produza o resultado esperado, o vendedor mantém ou amplia seu comportamento.
+
+### Rodada 2
+
+**Ação:** o vendedor repete ou ajusta a estratégia com base no resultado anterior.
+
+**Resposta:** a plataforma aplica as mesmas regras e atualiza novamente a reputação.
+
+**Observação:** a plataforma passa a ter evidências sobre o padrão de comportamento observado.
+
+**Adaptação:** a plataforma pode introduzir uma restrição ou mecanismo de controle para reduzir a exploração identificada.
+
+### Rodada 3
+
+**Ação:** o vendedor observa a nova restrição e procura uma alternativa dentro das regras disponíveis.
+
+**Resposta:** a plataforma processa a nova interação e aplica a defesa existente.
+
+**Observação:** o efeito da nova estratégia é observado por ambos os lados.
+
+**Adaptação:** a plataforma pode modificar novamente sua defesa, enquanto o vendedor pode mudar sua estratégia para contornar a nova restrição.
+
+Esse processo pode continuar enquanto a estrutura de incentivos permanecer favorável à exploração.
+
+## 18. Características do ciclo adaptativo
+
+| Elemento                     | Descrição                                                                                                                    |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Quem observa quem?           | O vendedor observa a reputação publicada e seus efeitos; a plataforma observa avaliações e padrões de utilização das regras. |
+| O que pode mudar?            | O comportamento do vendedor e as regras de controle da plataforma.                                                           |
+| O que dispara a adaptação?   | Um resultado observado que altera os incentivos ou revela uma forma de exploração.                                           |
+| Qual é o custo da adaptação? | Mudanças de regra podem aumentar a complexidade do sistema e criar restrições para usuários legítimos.                       |
+| Existe corrida armamentista? | Sim. Uma nova restrição pode levar o vendedor a procurar outra estratégia, exigindo novas adaptações da plataforma.          |
+
+### 18.1 Diagrama do ciclo adaptativo
+
+-- Add diagrama
+
+O ponto central do modelo é que **a defesa não é uma solução permanente**. Quando uma regra altera os incentivos, o participante adversarial pode observar essa mudança e adaptar seu comportamento. Por isso, a análise precisa considerar não apenas se uma defesa funciona em uma rodada, mas também como ela altera as possibilidades das rodadas seguintes.
