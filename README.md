@@ -260,3 +260,52 @@ Essa diferença cria uma assimetria que será relevante para a análise estraté
 > **quem possui mais informações sobre o funcionamento e o estado da interação pode identificar oportunidades que não são igualmente visíveis aos demais participantes.**
 
 ---
+
+## 11. Custos e restrições
+
+As ações dos participantes não são ilimitadas. O sistema possui regras que restringem quando uma avaliação pode ser realizada e como ela participa da reputação.
+
+| Elemento                      | Restrição / custo                                                               |
+| ----------------------------- | ------------------------------------------------------------------------------- |
+| ⭐ **Avaliação**              | Só pode ocorrer quando o pedido está disponível para avaliação                  |
+| 👤 **Comprador**              | Precisa possuir uma compra relacionada ao vendedor para participar da avaliação |
+| 🏪 **Vendedor**               | Possui influência sobre o estado do pedido utilizado para liberar a avaliação   |
+| 📊 **Reputação**              | É formada a partir das avaliações registradas                                   |
+| 🔄 **Alteração da avaliação** | A avaliação pode ser modificada, afetando novamente o sinal publicado           |
+
+Neste modelo, o principal custo estratégico não é necessariamente financeiro.
+
+O custo relevante é o **esforço necessário para realizar uma ação e a possibilidade de ela ser limitada pelas regras do sistema**.
+
+---
+
+## 12. Pressupostos e modos de falha
+
+A análise parte de alguns pressupostos sobre o funcionamento atual do sistema.
+
+| Pressuposto                                                          | Possível modo de falha                                                                            |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **P1.** O pedido entregue representa uma compra concluída.           | O vendedor controla o estado `delivered`, podendo influenciar quando a avaliação fica disponível. |
+| **P2.** A avaliação representa uma experiência real de compra.       | Múltiplas contas ou compras podem permitir a criação de avaliações adicionais.                    |
+| **P3.** A média das avaliações representa adequadamente a reputação. | Poucas avaliações ou avaliações manipuladas podem alterar significativamente o indicador.         |
+| **P4.** Avaliações problemáticas podem ser reportadas.               | A existência de uma denúncia não garante, por si só, que haverá uma ação posterior sobre ela.     |
+
+## 13. Relação entre regras e exploração
+
+Os pressupostos anteriores mostram como uma regra aparentemente funcional pode criar uma oportunidade estratégica.
+
+```mermaid
+flowchart LR
+    R["📏 Regra do sistema"]
+    O["🔎 Oportunidade"]
+    A["⚔️ Ação estratégica"]
+    S["📢 Alteração do sinal"]
+
+    R --> O --> A --> S
+```
+
+Por exemplo, se o estado do pedido influencia a disponibilidade da avaliação e esse estado pode ser alterado pelo próprio vendedor, existe uma relação entre uma **regra operacional** e o **resultado estratégico da reputação**.
+
+Essa relação será utilizada nos próximos modelos para identificar quais ações podem gerar vantagem e como o sistema pode responder a elas.
+
+---
