@@ -206,3 +206,57 @@ Para a análise posterior, os interesses centrais podem ser resumidos em:
 | 👀 **Outros usuários** | Tomar decisões com base em informações confiáveis                              |
 
 Essa diferença de objetivos é o ponto de partida para analisar **comportamentos estratégicos, exploração das regras e adaptação** nas próximas etapas.
+
+---
+
+## 9. Capacidades dos atores
+
+Cada participante possui capacidades diferentes dentro da interação analisada. Apenas as ações relacionadas à **avaliação e reputação** são consideradas neste trabalho.
+
+| Ator                   | Capacidades relevantes                                                                         |
+| ---------------------- | ---------------------------------------------------------------------------------------------- |
+| 👤 **Comprador**       | Decidir se avalia, escolher a nota e registrar sua avaliação                                   |
+| 🏪 **Vendedor**        | Atualizar o estado do pedido e acompanhar sua reputação                                        |
+| ⚙️ **Plataforma**      | Liberar avaliações conforme as regras, registrar avaliações, agregá-las e publicar a reputação |
+| 👀 **Outros usuários** | Consultar a reputação e as avaliações publicadas                                               |
+
+---
+
+## 10. Informações observáveis
+
+As decisões dos participantes dependem das informações que conseguem observar durante a interação.
+
+| Ator                   | Informações observáveis relevantes                                          |
+| ---------------------- | --------------------------------------------------------------------------- |
+| 👤 **Comprador**       | Estado do próprio pedido e possibilidade de avaliação                       |
+| 🏪 **Vendedor**        | Estado dos pedidos relacionados às suas vendas e sua reputação publicada    |
+| ⚙️ **Plataforma**      | Pedidos, avaliações registradas e dados utilizados na formação da reputação |
+| 👀 **Outros usuários** | Reputação pública e avaliações disponíveis                                  |
+
+A reputação publicada funciona como o principal **sinal observável** entre os participantes.
+
+```mermaid
+flowchart LR
+    C["👤 Comprador"]
+    V["🏪 Vendedor"]
+    P["⚙️ Plataforma"]
+    U["👀 Outros usuários"]
+
+    C -->|"avaliação"| P
+    V -->|"estado do pedido"| P
+    P -->|"reputação"| V
+    P -->|"reputação pública"| U
+    U -->|"observação do sinal"| V
+```
+
+### Assimetria de informação
+
+Nem todos os participantes possuem acesso às mesmas informações.
+
+A plataforma possui acesso aos dados utilizados no processo de avaliação e agregação, enquanto outros usuários observam principalmente o **resultado publicado**.
+
+Essa diferença cria uma assimetria que será relevante para a análise estratégica:
+
+> **quem possui mais informações sobre o funcionamento e o estado da interação pode identificar oportunidades que não são igualmente visíveis aos demais participantes.**
+
+---
