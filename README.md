@@ -428,3 +428,52 @@ Esse processo pode continuar enquanto a estrutura de incentivos permanecer favor
 -- Add diagrama
 
 O ponto central do modelo é que **a defesa não é uma solução permanente**. Quando uma regra altera os incentivos, o participante adversarial pode observar essa mudança e adaptar seu comportamento. Por isso, a análise precisa considerar não apenas se uma defesa funciona em uma rodada, mas também como ela altera as possibilidades das rodadas seguintes.
+
+## 19. Superfície de ataque
+
+A superfície de ataque é formada pelos pontos em que as regras do subsistema podem ser utilizadas para alterar o resultado da reputação.
+
+| ID     | Ponto de exploração                    | Exploração possível                                              | Consequência                                         |
+| ------ | -------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------- |
+| **E1** | Entrada de avaliação sem cota          | Produção de várias avaliações por diferentes contas              | Aumento artificial do volume de avaliações           |
+| **E2** | `delivered` controlado pelo vendedor   | Marcação unilateral do pedido como entregue                      | Liberação de avaliações sem confirmação independente |
+| **E3** | Média aritmética                       | Alteração da média com novas avaliações                          | Distorção do sinal público                           |
+| **E4** | Identidade e custo econômico reduzidos | Criação de contas e utilização de compra compartilhada/cuponagem | Baixo custo para produzir avaliações adicionais      |
+| **E5** | Avaliação mutável                      | Reescrita da avaliação sem histórico de versões                  | Perda de rastreabilidade do sinal                    |
+| **E6** | Fila de denúncias sem consumidor       | Produção de denúncias sem processamento posterior                | Saturação do mecanismo de moderação                  |
+
+Os pontos não são independentes. **E2 habilita E1**, pois a alteração do estado do pedido permite liberar novas avaliações. **E4 torna E1 economicamente viável**, enquanto **E3 amplifica o efeito** das avaliações produzidas. **E5 dificulta a rastreabilidade** e **E6 reduz a capacidade de resposta da plataforma**.
+
+### 19.1 Diagrama da superfície de ataque
+
+-- Add diagrama
+
+## 20. Cenários de ameaça
+
+Os cenários abaixo representam explorações possíveis a partir dos pontos identificados na superfície de ataque.
+
+### T1 — Manipulação por volume de avaliações
+
+**Se** o vendedor puder produzir ou obter avaliações adicionais por meio de novas contas e pedidos, **então** poderá aumentar artificialmente a quantidade de avaliações positivas, **podendo** alterar a reputação publicada.
+
+**Pontos relacionados:** E1, E2 e E4.
+
+### T2 — Manipulação direta do sinal
+
+**Se** a reputação for calculada pela média aritmética de todas as avaliações, **então** novas avaliações estrategicamente produzidas terão efeito direto sobre o indicador, **podendo** deslocar a reputação para um valor diferente da experiência real dos compradores.
+
+**Ponto relacionado:** E3.
+
+### T3 — Alteração silenciosa da evidência
+
+**Se** uma avaliação puder ser modificada sem retenção de versões anteriores, **então** o conteúdo originalmente publicado poderá ser substituído, **podendo** dificultar a identificação de alterações estratégicas e reduzir a rastreabilidade da reputação.
+
+**Ponto relacionado:** E5.
+
+### T4 — Saturação da resposta defensiva
+
+**Se** denúncias puderem ser registradas sem um mecanismo efetivo de processamento e priorização, **então** um participante poderá gerar várias denúncias para aumentar o volume da fila, **podendo** consumir a capacidade de análise da plataforma e atrasar casos legítimos.
+
+**Ponto relacionado:** E6.
+
+Os quatro cenários mostram que a exploração não depende necessariamente de acesso privilegiado ou de falha técnica. O principal risco está na combinação entre **regras legítimas, incentivos estratégicos e ausência de mecanismos suficientes para limitar ou interpretar seu uso**.
