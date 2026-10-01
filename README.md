@@ -506,3 +506,25 @@ A estratégia considera:
 - exibir a quantidade de avaliações junto ao indicador;
 - identificar padrões que justifiquem revisão;
 - encaminhar casos relevantes para moderação.
+
+### 22.1 Adaptação do adversário
+
+A defesa altera as informações disponíveis para o vendedor. Se aumentar simplesmente o número de avaliações deixar de produzir o mesmo efeito sobre a reputação, o incentivo pode migrar para outras estratégias, como concentrar avaliações em períodos específicos ou explorar diferentes contas.
+
+Isso mantém o caráter adaptativo do sistema: **a redução de uma vantagem pode incentivar a busca por outra superfície de exploração**.
+
+### 22.2 Custos e efeitos colaterais
+
+A defesa também pode prejudicar usuários legítimos. Um vendedor novo pode possuir poucas avaliações reais e, por isso, apresentar maior incerteza mesmo sem qualquer comportamento adversarial.
+
+Da mesma forma, mecanismos de detecção podem gerar falsos positivos e encaminhar usuários legítimos para revisão.
+
+Por isso, a defesa não deve simplesmente bloquear avaliações ou considerar automaticamente suspeito um padrão específico.
+
+### 22.3 Risco residual
+
+Mesmo após as medidas propostas, permanece a possibilidade de manipulação por participantes que consigam produzir avaliações aparentemente legítimas.
+
+O objetivo da defesa não é eliminar completamente a ameaça, mas **reduzir sua capacidade de alterar o sinal e aumentar o custo da exploração**.
+
+A propriedade que deve permanecer preservada é a **confiabilidade da reputação como sinal para os demais usuários**. Uma defesa que reduza a fraude, mas também impeça compradores legítimos de registrar suas experiências, não preserva essa propriedade.
