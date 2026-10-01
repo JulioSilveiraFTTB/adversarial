@@ -1,0 +1,25 @@
+flowchart LR
+    B["Comprador"]
+    V["Vendedor"]
+    U["Outros usuários"]
+
+    subgraph SR["SUBSISTEMA DE REPUTAÇÃO DO VENDEDOR"]
+        AV["Avaliação da compra"]
+        AG["Agregação das avaliações"]
+        RP["Reputação pública"]
+    end
+
+    B -->|"Avalia a compra e atribui nota"| AV
+    V -->|"Altera status do pedido para 'entregue'"| AV
+
+    AV -->|"Avaliação registrada"| AG
+    AG -->|"Calcula indicador"| RP
+
+    RP -->|"Nota, quantidade e percentual de avaliações"| U
+    U -->|"Consulta reputação antes da compra"| RP
+
+    P["Propriedade a preservar:<br/>confiabilidade da reputação como<br/>sinal da experiência dos compradores"]
+
+    RP -.-> P
+
+    V -.->|"Pode explorar as regras<br/>para influenciar o sinal"| AG
