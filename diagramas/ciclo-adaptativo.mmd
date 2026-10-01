@@ -1,0 +1,55 @@
+flowchart TD
+
+    R1A["RODADA 1: AÇÃO<br/><br/>Vendedor registra múltiplas contas,<br/>usa cupom, marca pedidos como<br/>delivered e publica 5 estrelas"]
+    R1R["RESPOSTA<br/><br/>Sistema aceita as avaliações<br/>conforme as regras atuais"]
+    R1O["OBSERVAÇÃO<br/><br/>Vendedor observa que o volume<br/>de avaliações altera o sinal"]
+    R1AD["ADAPTAÇÃO<br/><br/>Vendedor mantém o objetivo<br/>e ajusta a estratégia"]
+
+    R2A["RODADA 2: AÇÃO<br/><br/>Vendedor concentra a produção<br/>de avaliações dentro da janela"]
+    R2R["RESPOSTA<br/><br/>Defensor limita o volume<br/>de avaliações por vendedor<br/>e por janela"]
+    R2O["OBSERVAÇÃO<br/><br/>Vendedor observa que o volume<br/>foi reduzido, mas a densidade<br/>na janela permanece possível"]
+    R2AD["ADAPTAÇÃO<br/><br/>Vendedor desloca a estratégia<br/>de volume para ritmo"]
+
+    R3A["RODADA 3: AÇÃO<br/><br/>Vendedor publica avaliações<br/>em um ritmo planejado para<br/>maturar dentro da janela"]
+    R3R["RESPOSTA<br/><br/>Defensor usa peso de recência<br/>e janela deslizante"]
+    R3O["OBSERVAÇÃO<br/><br/>Vendedor observa que a forma<br/>e o momento das avaliações<br/>passaram a influenciar o sinal"]
+    R3AD["ADAPTAÇÃO<br/><br/>Vendedor procura outra forma<br/>de explorar a assimetria"]
+
+    R4A["RODADA 4: AÇÃO<br/><br/>Vendedor ataca a assimetria:<br/>avalia concorrentes, coordena<br/>contas e satura denúncias"]
+    R4R["RESPOSTA<br/><br/>Defensor muda o alvo da defesa:<br/>agregador, confirmação de<br/>recebimento e moderação"]
+    R4O["OBSERVAÇÃO<br/><br/>Ambos observam que cada defesa<br/>altera o custo e as possibilidades<br/>da próxima estratégia"]
+    R4AD["ADAPTAÇÃO<br/><br/>Ambos ajustam novamente<br/>suas estratégias"]
+
+    R1A --> R1R
+    R1R --> R1O
+    R1O --> R1AD
+
+    R1AD -->|"Informação da rodada 1"| R2A
+
+    R2A --> R2R
+    R2R --> R2O
+    R2O --> R2AD
+
+    R2AD -->|"Informação da rodada 2"| R3A
+
+    R3A --> R3R
+    R3R --> R3O
+    R3O --> R3AD
+
+    R3AD -->|"Informação da rodada 3"| R4A
+
+    R4A --> R4R
+    R4R --> R4O
+    R4O --> R4AD
+
+    R4AD -.->|"Nova adaptação pode iniciar<br/>outra rodada"| R1A
+
+    classDef acao fill:#e8f0fe,stroke:#1a73e8,stroke-width:2px
+    classDef resposta fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef observacao fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    classDef adaptacao fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+
+    class R1A,R2A,R3A,R4A acao
+    class R1R,R2R,R3R,R4R resposta
+    class R1O,R2O,R3O,R4O observacao
+    class R1AD,R2AD,R3AD,R4AD adaptacao
