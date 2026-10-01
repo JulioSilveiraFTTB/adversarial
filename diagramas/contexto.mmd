@@ -1,25 +1,36 @@
 flowchart LR
+
     B["Comprador"]
     V["Vendedor"]
+    S["Sistema de reputação"]
     U["Outros usuários"]
 
     subgraph SR["SUBSISTEMA DE REPUTAÇÃO DO VENDEDOR"]
-        AV["Avaliação da compra"]
+        A["Avaliação"]
         AG["Agregação das avaliações"]
         RP["Reputação pública"]
     end
 
-    B -->|"Avalia a compra e atribui nota"| AV
-    V -->|"Altera status do pedido para 'entregue'"| AV
+    B -->|"Avaliação"| A
+    A -->|"Avaliações registradas"| AG
+    AG -->|"Indicador agregado"| RP
+    RP -->|"Reputação pública"| U
+    U -->|"Decisões de compra"| V
 
-    AV -->|"Avaliação registrada"| AG
-    AG -->|"Calcula indicador"| RP
+    V -->|"Interesse na reputação"| S
+    S -->|"Regras de registro e agregação"| SR
 
-    RP -->|"Nota, quantidade e percentual de avaliações"| U
-    U -->|"Consulta reputação antes da compra"| RP
+    B -.->|"Objetivos próprios"| V
+    V -.->|"Incentivo para influenciar o sinal"| S
 
-    P["Propriedade a preservar:<br/>confiabilidade da reputação como<br/>sinal da experiência dos compradores"]
+    P["Propriedade a preservar:<br/>confiabilidade da reputação pública<br/>como sinal da experiência dos compradores"]
 
     RP -.-> P
 
-    V -.->|"Pode explorar as regras<br/>para influenciar o sinal"| AG
+    classDef actor fill:#f5f5f5,stroke:#333,stroke-width:1.5px,color:#111
+    classDef system fill:#e8f0fe,stroke:#1a73e8,stroke-width:2px,color:#111
+    classDef property fill:#fff4cc,stroke:#d6a700,stroke-width:1.5px,color:#111
+
+    class B,V,U actor
+    class S,A,AG,RP system
+    class P property
