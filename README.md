@@ -477,3 +477,32 @@ Os cenários abaixo representam explorações possíveis a partir dos pontos ide
 **Ponto relacionado:** E6.
 
 Os quatro cenários mostram que a exploração não depende necessariamente de acesso privilegiado ou de falha técnica. O principal risco está na combinação entre **regras legítimas, incentivos estratégicos e ausência de mecanismos suficientes para limitar ou interpretar seu uso**.
+
+## 21. Análise de riscos
+
+Os riscos são classificados pela combinação entre **probabilidade** e **impacto**, utilizando escala de 1 a 3. O risco é calculado por:
+
+**Risco = Probabilidade × Impacto**
+
+| Ameaça                                        | Probabilidade | Impacto | Risco | Prioridade |
+| --------------------------------------------- | :-----------: | :-----: | :---: | ---------- |
+| **T1 — Manipulação por volume de avaliações** |       3       |    3    | **9** | Alta       |
+| **T2 — Manipulação direta do sinal**          |       3       |    3    | **9** | Alta       |
+| **T3 — Alteração silenciosa da evidência**    |       2       |    2    | **4** | Média      |
+| **T4 — Saturação da resposta defensiva**      |       2       |    3    | **6** | Média      |
+
+As classificações são hipóteses do modelo e não resultados de medição empírica. T1 e T2 recebem maior prioridade porque exploram diretamente a formação da reputação e podem alterar o sinal consumido pelos demais usuários.
+
+## 22. Ameaça prioritária e resposta
+
+A ameaça utilizada como prioridade de análise é **T1 — Manipulação por volume de avaliações**, pois combina baixo custo de exploração com capacidade de alterar diretamente a reputação publicada.
+
+A resposta proposta para o Trabalho 2 é reduzir a influência de avaliações adicionais sobre o indicador, em vez de depender apenas de um limite de quantidade.
+
+A estratégia considera:
+
+- utilizar um agregador que considere a quantidade de avaliações e a incerteza do resultado;
+- aplicar peso de recência às avaliações;
+- exibir a quantidade de avaliações junto ao indicador;
+- identificar padrões que justifiquem revisão;
+- encaminhar casos relevantes para moderação.
