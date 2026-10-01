@@ -528,3 +528,15 @@ Mesmo após as medidas propostas, permanece a possibilidade de manipulação por
 O objetivo da defesa não é eliminar completamente a ameaça, mas **reduzir sua capacidade de alterar o sinal e aumentar o custo da exploração**.
 
 A propriedade que deve permanecer preservada é a **confiabilidade da reputação como sinal para os demais usuários**. Uma defesa que reduza a fraude, mas também impeça compradores legítimos de registrar suas experiências, não preserva essa propriedade.
+
+## 23. Limitações
+
+A análise possui algumas limitações que devem ser consideradas na interpretação dos resultados.
+
+- Os payoffs da matriz estratégica são **construídos**, não estimados empiricamente.
+- As probabilidades e impactos da análise de riscos são **hipóteses do modelo**, não medições reais.
+- O modelo dinâmico pressupõe que os participantes observam os resultados anteriores e conseguem adaptar seu comportamento.
+- A análise considera principalmente o vendedor como participante adversarial e a plataforma como mecanismo de defesa.
+- Os mecanismos de defesa propostos ainda não foram implementados ou avaliados empiricamente.
+
+Essas limitações definem parte do trabalho que deverá ser validado no Trabalho 2.
