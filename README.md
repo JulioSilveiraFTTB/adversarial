@@ -75,21 +75,9 @@ O comprador pode ter interesse em registrar uma avaliação que represente sua e
 
 Ao mesmo tempo, a plataforma utiliza as avaliações para produzir um sinal que deve continuar sendo útil para outros usuários. Isso cria uma relação onde:
 
-```mermaid
-flowchart TD
-    B["👤 Comprador"]
-    V["🏪 Vendedor"]
-    S["⚙️ Sistema de reputação"]
-    U["👀 Outros usuários"]
+![Diagrama de contexto](diagramas/contexto.png)
 
-    B -->|"avaliação"| S
-    V -->|"interesse na reputação"| S
-    S -->|"reputação pública"| U
-    U -->|"decisões de compra"| V
-
-    B -. "objetivos próprios" .-> V
-    V -. "incentivo para influenciar o sinal" .-> S
-```
+_Figura 1 — Contexto do subsistema de reputação do vendedor._
 
 O problema analisado não é simplesmente a ocorrência de erros ou comportamentos acidentais. O foco está na situação em que um participante:
 
@@ -346,7 +334,7 @@ Os valores representam **utilidade relativa**, e não valores monetários observ
 | **A1 — Avaliação honesta**     |            **(2, 2)** |                      **(0, 3)** |
 | **A2 — Abstenção estratégica** |            **(1, 2)** |                      **(3, 3)** |
 
-**Primeiro valor:** payoff do comprador.  
+**Primeiro valor:** payoff do comprador.
 **Segundo valor:** payoff do vendedor.
 
 ### 🔎 Interpretação
@@ -425,7 +413,9 @@ Esse processo pode continuar enquanto a estrutura de incentivos permanecer favor
 
 ### 18.1 Diagrama do ciclo adaptativo
 
--- Add diagrama
+<img src="diagramas/ciclo-adaptativo.png" alt="Ciclo adaptativo" width="500">
+
+**Figura 2 — Ciclo adaptativo entre ataque e defesa no subsistema de reputação.**
 
 O ponto central do modelo é que **a defesa não é uma solução permanente**. Quando uma regra altera os incentivos, o participante adversarial pode observar essa mudança e adaptar seu comportamento. Por isso, a análise precisa considerar não apenas se uma defesa funciona em uma rodada, mas também como ela altera as possibilidades das rodadas seguintes.
 
@@ -446,7 +436,9 @@ Os pontos não são independentes. **E2 habilita E1**, pois a alteração do est
 
 ### 19.1 Diagrama da superfície de ataque
 
--- Add diagrama
+![Superfície de ataque](diagramas/superficie-ataque.png)
+
+**Figura 3 — Superfície de ataque do subsistema de reputação do vendedor.**
 
 ## 20. Cenários de ameaça
 
