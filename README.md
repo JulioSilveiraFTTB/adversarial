@@ -532,3 +532,12 @@ A análise possui algumas limitações que devem ser consideradas na interpreta�
 - Os mecanismos de defesa propostos ainda não foram implementados ou avaliados empiricamente.
 
 Essas limitações definem parte do trabalho que deverá ser validado no Trabalho 2.
+
+## 🤖 Uso de Inteligência Artificial
+
+Ferramentas de Inteligência Artificial generativa foram utilizadas como apoio
+à organização textual, revisão e discussão dos modelos apresentados neste
+trabalho. A definição do recorte, das hipóteses, dos atores, das ameaças,
+dos payoffs e das conclusões foi revisada e validada pelos integrantes do grupo.
+
+Também foi utilizada Inteligência Artifical para correções de texto dentro do README.
