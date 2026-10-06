@@ -252,13 +252,13 @@ Essa diferença cria uma assimetria que será relevante para a análise estraté
 
 As ações dos participantes não são ilimitadas. O sistema possui regras que restringem quando uma avaliação pode ser realizada e como ela participa da reputação.
 
-| Elemento                      | Restrição / custo                                                               |
-| ----------------------------- | ------------------------------------------------------------------------------- |
-| ⭐ **Avaliação**              | Só pode ocorrer quando o pedido está disponível para avaliação                  |
-| 👤 **Comprador**              | Precisa possuir uma compra relacionada ao vendedor para participar da avaliação |
-| 🏪 **Vendedor**               | Possui influência sobre o estado do pedido utilizado para liberar a avaliação   |
-| 📊 **Reputação**              | É formada a partir das avaliações registradas                                   |
-| 🔄 **Alteração da avaliação** | A avaliação pode ser modificada, afetando novamente o sinal publicado           |
+| Elemento                       | Restrição / custo                                                                |
+| ------------------------------ | -------------------------------------------------------------------------------- |
+| ⭐ **Avaliação**               | Só pode ocorrer quando o pedido está disponível para avaliação                   |
+| 👤 **Comprador**               | Precisa possuir uma compra relacionada ao vendedor para participar da avaliação  |
+| 🏪 **Vendedor**                | Possui influência sobre o estado do pedido utilizado para liberar a avaliação    |
+| 📊 **Reputação**               | É formada a partir das avaliações registradas                                    |
+| 🔄 **Alteração da avaliação**  | A avaliação pode ser modificada, afetando novamente o sinal publicado            |
 
 Neste modelo, o principal custo estratégico não é necessariamente financeiro.
 
@@ -270,12 +270,12 @@ O custo relevante é o **esforço necessário para realizar uma ação e a possi
 
 A análise parte de alguns pressupostos sobre o funcionamento atual do sistema.
 
-| Pressuposto                                                          | Possível modo de falha                                                                            |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| **P1.** O pedido entregue representa uma compra concluída.           | O vendedor controla o estado `delivered`, podendo influenciar quando a avaliação fica disponível. |
-| **P2.** A avaliação representa uma experiência real de compra.       | Múltiplas contas ou compras podem permitir a criação de avaliações adicionais.                    |
-| **P3.** A média das avaliações representa adequadamente a reputação. | Poucas avaliações ou avaliações manipuladas podem alterar significativamente o indicador.         |
-| **P4.** Avaliações problemáticas podem ser reportadas.               | A existência de uma denúncia não garante, por si só, que haverá uma ação posterior sobre ela.     |
+| Pressuposto                                                           | Possível modo de falha                                                                             |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **P1.** O pedido entregue representa uma compra concluída.            | O vendedor controla o estado `delivered`, podendo influenciar quando a avaliação fica disponível.  |
+| **P2.** A avaliação representa uma experiência real de compra.        | Múltiplas contas ou compras podem permitir a criação de avaliações adicionais.                     |
+| **P3.** A média das avaliações representa adequadamente a reputação.  | Poucas avaliações ou avaliações manipuladas podem alterar significativamente o indicador.          |
+| **P4.** Avaliações problemáticas podem ser reportadas.                | A existência de uma denúncia não garante, por si só, que haverá uma ação posterior sobre ela.      |
 
 ## 13. Relação entre regras e exploração
 
@@ -283,12 +283,11 @@ Os pressupostos anteriores mostram como uma regra aparentemente funcional pode c
 
 ```mermaid
 flowchart LR
-    R["📏 Regra do sistema"]
-    O["🔎 Oportunidade"]
-    A["⚔️ Ação estratégica"]
-    S["📢 Alteração do sinal"]
-
-    R --> O --> A --> S
+    R["📏 Regra do sistema"]
+    O["🔎 Oportunidade"]
+    A["⚔️ Ação estratégica"]
+    S["📢 Alteração do sinal"]
+    R --> O --> A --> S
 ```
 
 Por exemplo, se o estado do pedido influencia a disponibilidade da avaliação e esse estado pode ser alterado pelo próprio vendedor, existe uma relação entre uma **regra operacional** e o **resultado estratégico da reputação**.
@@ -310,17 +309,17 @@ A plataforma permanece como o mecanismo que aplica as regras do sistema. Neste m
 
 O comprador possui duas estratégias simplificadas:
 
-| Código | Estratégia            | Descrição                                                              |
-| ------ | --------------------- | ---------------------------------------------------------------------- |
-| **A1** | Avaliação honesta     | Registra uma avaliação compatível com sua experiência                  |
-| **A2** | Abstenção estratégica | Não registra uma avaliação, preservando sua posição diante do vendedor |
+| Código | Estratégia             | Descrição                                                               |
+| ------ | ---------------------- | ----------------------------------------------------------------------- |
+| **A1** | Avaliação honesta      | Registra uma avaliação compatível com sua experiência                   |
+| **A2** | Abstenção estratégica  | Não registra uma avaliação, preservando sua posição diante do vendedor  |
 
 O vendedor também possui duas estratégias:
 
-| Código | Estratégia                 | Descrição                                                                 |
-| ------ | -------------------------- | ------------------------------------------------------------------------- |
-| **B1** | Comportamento transparente | Permite que o processo de avaliação represente a experiência do comprador |
-| **B2** | Influência estratégica     | Utiliza as regras disponíveis para favorecer sua reputação                |
+| Código | Estratégia                 | Descrição                                                                  |
+| ------ | -------------------------- | -------------------------------------------------------------------------- |
+| **B1** | Comportamento transparente | Permite que o processo de avaliação represente a experiência do comprador  |
+| **B2** | Influência estratégica     | Utiliza as regras disponíveis para favorecer sua reputação                 |
 
 ---
 
@@ -328,12 +327,13 @@ O vendedor também possui duas estratégias:
 
 Os valores representam **utilidade relativa**, e não valores monetários observados no sistema.
 
-| 👤 Comprador × 🏪 Vendedor     | **B1 — Transparente** | **B2 — Influência estratégica** |
+| 👤 Comprador × 🏪 Vendedor     | **B1 — Transparente** | **B2 — Influência estratégica** |
 | ------------------------------ | --------------------: | ------------------------------: |
-| **A1 — Avaliação honesta**     |            **(2, 2)** |                      **(0, 3)** |
-| **A2 — Abstenção estratégica** |            **(1, 2)** |                      **(3, 3)** |
+| **A1 — Avaliação honesta**     |            **(2, 2)** |                      **(0, 3)** |
+| **A2 — Abstenção estratégica** |            **(1, 2)** |                      **(3, 3)** |
 
 **Primeiro valor:** payoff do comprador.
+
 **Segundo valor:** payoff do vendedor.
 
 ### 🔎 Interpretação
@@ -402,13 +402,13 @@ Esse processo pode continuar enquanto a estrutura de incentivos permanecer favor
 
 ## 18. Características do ciclo adaptativo
 
-| Elemento                     | Descrição                                                                                                                    |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Quem observa quem?           | O vendedor observa a reputação publicada e seus efeitos; a plataforma observa avaliações e padrões de utilização das regras. |
-| O que pode mudar?            | O comportamento do vendedor e as regras de controle da plataforma.                                                           |
-| O que dispara a adaptação?   | Um resultado observado que altera os incentivos ou revela uma forma de exploração.                                           |
-| Qual é o custo da adaptação? | Mudanças de regra podem aumentar a complexidade do sistema e criar restrições para usuários legítimos.                       |
-| Existe corrida armamentista? | Sim. Uma nova restrição pode levar o vendedor a procurar outra estratégia, exigindo novas adaptações da plataforma.          |
+| Elemento                      | Descrição                                                                                                                     |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Quem observa quem?            | O vendedor observa a reputação publicada e seus efeitos; a plataforma observa avaliações e padrões de utilização das regras.  |
+| O que pode mudar?             | O comportamento do vendedor e as regras de controle da plataforma.                                                            |
+| O que dispara a adaptação?    | Um resultado observado que altera os incentivos ou revela uma forma de exploração.                                            |
+| Qual é o custo da adaptação?  | Mudanças de regra podem aumentar a complexidade do sistema e criar restrições para usuários legítimos.                        |
+| Existe corrida armamentista?  | Sim. Uma nova restrição pode levar o vendedor a procurar outra estratégia, exigindo novas adaptações da plataforma.           |
 
 ### 18.1 Diagrama do ciclo adaptativo
 
@@ -422,20 +422,20 @@ O ponto central do modelo é que **a defesa não é uma solução permanente**. 
 
 A superfície de ataque é formada pelos pontos em que as regras do subsistema podem ser utilizadas para alterar o resultado da reputação.
 
-| ID     | Ponto de exploração                    | Exploração possível                                              | Consequência                                         |
-| ------ | -------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------- |
-| **E1** | Entrada de avaliação sem cota          | Produção de várias avaliações por diferentes contas              | Aumento artificial do volume de avaliações           |
-| **E2** | `delivered` controlado pelo vendedor   | Marcação unilateral do pedido como entregue                      | Liberação de avaliações sem confirmação independente |
-| **E3** | Média aritmética                       | Alteração da média com novas avaliações                          | Distorção do sinal público                           |
-| **E4** | Identidade e custo econômico reduzidos | Criação de contas e utilização de compra compartilhada/cuponagem | Baixo custo para produzir avaliações adicionais      |
-| **E5** | Avaliação mutável                      | Reescrita da avaliação sem histórico de versões                  | Perda de rastreabilidade do sinal                    |
-| **E6** | Fila de denúncias sem consumidor       | Produção de denúncias sem processamento posterior                | Saturação do mecanismo de moderação                  |
+| ID     | Ponto de exploração                     | Exploração possível                                               | Consequência                                          |
+| ------ | --------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------- |
+| **E1** | Entrada de avaliação sem cota           | Produção de várias avaliações por diferentes contas               | Aumento artificial do volume de avaliações            |
+| **E2** | `delivered` controlado pelo vendedor    | Marcação unilateral do pedido como entregue                       | Liberação de avaliações sem confirmação independente  |
+| **E3** | Média aritmética                        | Alteração da média com novas avaliações                           | Distorção do sinal público                            |
+| **E4** | Identidade e custo econômico reduzidos  | Criação de contas e utilização de compra compartilhada/cuponagem  | Baixo custo para produzir avaliações adicionais       |
+| **E5** | Avaliação mutável                       | Reescrita da avaliação sem histórico de versões                   | Perda de rastreabilidade do sinal                     |
+| **E6** | Fila de denúncias sem consumidor        | Produção de denúncias sem processamento posterior                 | Saturação do mecanismo de moderação                   |
 
 Os pontos não são independentes. **E2 habilita E1**, pois a alteração do estado do pedido permite liberar novas avaliações. **E4 torna E1 economicamente viável**, enquanto **E3 amplifica o efeito** das avaliações produzidas. **E5 dificulta a rastreabilidade** e **E6 reduz a capacidade de resposta da plataforma**.
 
 ### 19.1 Diagrama da superfície de ataque
 
-<img src="diagramas/superficie-ataque.png" alt="Superfície de ataque" width="600">
+<img src="diagramas/superficie-ataque.png" alt="Superfície de ataque" width="400">
 
 **Figura 3 — Superfície de ataque do subsistema de reputação do vendedor.**
 
