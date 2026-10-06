@@ -475,12 +475,12 @@ Os riscos são classificados pela combinação entre **probabilidade** e **impac
 
 **Risco = Probabilidade × Impacto**
 
-| Ameaça                                        | Probabilidade | Impacto | Risco | Prioridade |
-| --------------------------------------------- | :-----------: | :-----: | :---: | ---------- |
-| **T1 — Manipulação por volume de avaliações** |       3       |    3    | **9** | Alta       |
-| **T2 — Manipulação direta do sinal**          |       3       |    3    | **9** | Alta       |
-| **T3 — Alteração silenciosa da evidência**    |       2       |    2    | **4** | Média      |
-| **T4 — Saturação da resposta defensiva**      |       2       |    3    | **6** | Média      |
+| Ameaça                                         | Probabilidade | Impacto  | Risco | Prioridade  |
+| ---------------------------------------------- | :-----------: | :------: | :---: | ----------- |
+| **T1 — Manipulação por volume de avaliações**  |       3       |    3     | **9** | Alta        |
+| **T2 — Manipulação direta do sinal**           |       3       |    3     | **9** | Alta        |
+| **T3 — Alteração silenciosa da evidência**     |       2       |    2     | **4** | Média       |
+| **T4 — Saturação da resposta defensiva**       |       2       |    3     | **6** | Média       |
 
 As classificações são hipóteses do modelo e não resultados de medição empírica. T1 e T2 recebem maior prioridade porque exploram diretamente a formação da reputação e podem alterar o sinal consumido pelos demais usuários.
 
