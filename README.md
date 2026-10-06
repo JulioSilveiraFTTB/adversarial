@@ -6,14 +6,14 @@
 
 ## Visão geral
 
-| Informação              | Detalhe                                                           |
-| ----------------------- | ----------------------------------------------------------------- |
-| **Sistema**             | Inclusivo                                                         |
-| **Domínio**             | E-commerce de calçados                                            |
-| **Objeto de análise**   | Subsistema de reputação dos vendedores                            |
-| **Interação analisada** | Avaliação do comprador e formação da reputação                    |
-| **Natureza**            | Sistema adversarial e multiagente                                 |
-| **Objetivo**            | Analisar incentivos, exploração de regras e adaptação estratégica |
+| Informação               | Detalhe                                                            |
+| ------------------------ | ------------------------------------------------------------------ |
+| **Sistema**              | Inclusivo                                                          |
+| **Domínio**              | E-commerce de calçados                                             |
+| **Objeto de análise**    | Subsistema de reputação dos vendedores                             |
+| **Interação analisada**  | Avaliação do comprador e formação da reputação                     |
+| **Natureza**             | Sistema adversarial e multiagente                                  |
+| **Objetivo**             | Analisar incentivos, exploração de regras e adaptação estratégica  |
 
 ---
 
@@ -39,13 +39,13 @@ O foco é:
 
 ```mermaid
 flowchart LR
-    A["🛒 Compra concluída"]
-    B["⭐ Avaliação disponível"]
-    C["👤 Comprador decide<br/>se e como avaliar"]
-    D["⚙️ Sistema registra<br/>a avaliação"]
-    E["📊 Sistema agrega<br/>as avaliações"]
-    F["📢 Reputação publicada"]
-    G["👀 Outros usuários<br/>observam o sinal"]
+    A["🛒 Compra concluída"]
+    B["⭐ Avaliação disponível"]
+    C["👤 Comprador decide<br/>se e como avaliar"]
+    D["⚙️ Sistema registra<br/>a avaliação"]
+    E["📊 Sistema agrega<br/>as avaliações"]
+    F["📢 Reputação publicada"]
+    G["👀 Outros usuários<br/>observam o sinal"]
 ```
 
 ---
@@ -54,10 +54,10 @@ flowchart LR
 
 A interação estudada é composta por duas decisões principais:
 
-| Participante / mecanismo    | Decisão analisada                                          |
-| --------------------------- | ---------------------------------------------------------- |
-| 👤 **Comprador**            | Avaliar ou não o pedido e escolher a nota atribuída        |
-| ⚙️ **Sistema de reputação** | Transformar avaliações individuais em um indicador público |
+| Participante / mecanismo     | Decisão analisada                                           |
+| ---------------------------- | ----------------------------------------------------------- |
+| 👤 **Comprador**             | Avaliar ou não o pedido e escolher a nota atribuída         |
+| ⚙️ **Sistema de reputação**  | Transformar avaliações individuais em um indicador público  |
 
 O interesse do trabalho está no momento em que o participante deixa de agir apenas de acordo com o resultado imediato e passa a considerar:
 
@@ -101,13 +101,13 @@ Em outras palavras:
 
 ```text
 Avaliações reais
-      ↓
-   Agregação
-      ↓
+      ↓
+   Agregação
+      ↓
 Reputação pública
-      ↓
+      ↓
 Sinal confiável
-      ↓
+      ↓
 Decisão de outros usuários
 ```
 
@@ -119,15 +119,15 @@ Portanto, o objetivo é compreender **como as regras do sistema podem alterar os
 
 Para evitar que o trabalho se transforme em uma análise genérica de segurança ou de todo o sistema, o escopo fica delimitado da seguinte forma:
 
-| Dentro do escopo ✅            | Fora do escopo ❌               |
-| ------------------------------ | ------------------------------- |
-| Avaliação após uma compra      | Pagamento                       |
-| Decisão de atribuição da nota  | Logística                       |
-| Formação da reputação          | Carrinho                        |
-| Agregação das avaliações       | Cadastro de produtos            |
-| Alteração/manipulação do sinal | Funcionamento geral             |
-| Estratégias dos participantes  | Segurança completa da aplicação |
-| Adaptação diante das regras    | Ataques à infraestrutura        |
+| Dentro do escopo ✅             | Fora do escopo ❌                |
+| ------------------------------- | -------------------------------- |
+| Avaliação após uma compra       | Pagamento                        |
+| Decisão de atribuição da nota   | Logística                        |
+| Formação da reputação           | Carrinho                         |
+| Agregação das avaliações        | Cadastro de produtos             |
+| Alteração/manipulação do sinal  | Funcionamento geral              |
+| Estratégias dos participantes   | Segurança completa da aplicação  |
+| Adaptação diante das regras     | Ataques à infraestrutura         |
 
 ---
 
@@ -143,12 +143,12 @@ A partir deste recorte, o trabalho será desenvolvido progressivamente:
 
 ```mermaid
 flowchart LR
-    A["📌 Recorte"] --> B["👥 Atores e objetivos"]
-    B --> C["🎲 Modelo estratégico"]
-    C --> D["🔄 Modelo dinâmico"]
-    D --> E["⚔️ Superfície de ataque"]
-    E --> F["⚠️ Ameaças e riscos"]
-    F --> G["🛡️ Resiliência"]
+    A["📌 Recorte"] --> B["👥 Atores e objetivos"]
+    B --> C["🎲 Modelo estratégico"]
+    C --> D["🔄 Modelo dinâmico"]
+    D --> E["⚔️ Superfície de ataque"]
+    E --> F["⚠️ Ameaças e riscos"]
+    F --> G["🛡️ Resiliência"]
 ```
 
 Cada etapa será utilizada como base para a seguinte, mantendo o foco na mesma interação adversarial.
@@ -159,12 +159,12 @@ Cada etapa será utilizada como base para a seguinte, mantendo o foco na mesma i
 
 A interação analisada envolve participantes com objetivos diferentes, que podem influenciar o resultado da reputação pública.
 
-| Ator                   | Papel                                            | Objetivo                                                     |
-| ---------------------- | ------------------------------------------------ | ------------------------------------------------------------ |
-| 👤 **Comprador**       | Realiza a compra e pode avaliar                  | Representar sua experiência e obter uma experiência adequada |
-| 🏪 **Vendedor**        | Fornece o produto e participa do fluxo do pedido | Realizar vendas e preservar ou melhorar sua reputação        |
-| ⚙️ **Plataforma**      | Aplica as regras e processa as avaliações        | Manter a reputação como um sinal útil e confiável            |
-| 👀 **Outros usuários** | Consultam a reputação                            | Utilizar informações confiáveis para decidir sobre compras   |
+| Ator                    | Papel                                             | Objetivo                                                      |
+| ----------------------- | ------------------------------------------------- | ------------------------------------------------------------- |
+| 👤 **Comprador**        | Realiza a compra e pode avaliar                   | Representar sua experiência e obter uma experiência adequada  |
+| 🏪 **Vendedor**         | Fornece o produto e participa do fluxo do pedido  | Realizar vendas e preservar ou melhorar sua reputação         |
+| ⚙️ **Plataforma**       | Aplica as regras e processa as avaliações         | Manter a reputação como um sinal útil e confiável             |
+| 👀 **Outros usuários**  | Consultam a reputação                             | Utilizar informações confiáveis para decidir sobre compras    |
 
 ### Conflito de interesses
 
@@ -174,10 +174,10 @@ A interação pode ser resumida como:
 
 ```mermaid
 flowchart LR
-    C["👤 Comprador"] -->|"avaliação"| P["⚙️ Plataforma"]
-    V["🏪 Vendedor"] -->|"pedido / reputação"| P
-    P -->|"reputação pública"| U["👀 Outros usuários"]
-    U -->|"decisão de compra"| V
+    C["👤 Comprador"] -->|"avaliação"| P["⚙️ Plataforma"]
+    V["🏪 Vendedor"] -->|"pedido / reputação"| P
+    P -->|"reputação pública"| U["👀 Outros usuários"]
+    U -->|"decisão de compra"| V
 ```
 
 ---
@@ -186,12 +186,12 @@ flowchart LR
 
 Para a análise posterior, os interesses centrais podem ser resumidos em:
 
-| Participante           | Interesse estratégico                                                          |
-| ---------------------- | ------------------------------------------------------------------------------ |
-| 👤 **Comprador**       | Registrar ou não uma avaliação de acordo com sua experiência e seus incentivos |
-| 🏪 **Vendedor**        | Maximizar os benefícios de sua reputação pública                               |
-| ⚙️ **Plataforma**      | Preservar a confiabilidade do mecanismo de reputação                           |
-| 👀 **Outros usuários** | Tomar decisões com base em informações confiáveis                              |
+| Participante            | Interesse estratégico                                                           |
+| ----------------------- | ------------------------------------------------------------------------------- |
+| 👤 **Comprador**        | Registrar ou não uma avaliação de acordo com sua experiência e seus incentivos  |
+| 🏪 **Vendedor**         | Maximizar os benefícios de sua reputação pública                                |
+| ⚙️ **Plataforma**       | Preservar a confiabilidade do mecanismo de reputação                            |
+| 👀 **Outros usuários**  | Tomar decisões com base em informações confiáveis                               |
 
 Essa diferença de objetivos é o ponto de partida para analisar **comportamentos estratégicos, exploração das regras e adaptação** nas próximas etapas.
 
@@ -201,12 +201,12 @@ Essa diferença de objetivos é o ponto de partida para analisar **comportamento
 
 Cada participante possui capacidades diferentes dentro da interação analisada. Apenas as ações relacionadas à **avaliação e reputação** são consideradas neste trabalho.
 
-| Ator                   | Capacidades relevantes                                                                         |
-| ---------------------- | ---------------------------------------------------------------------------------------------- |
-| 👤 **Comprador**       | Decidir se avalia, escolher a nota e registrar sua avaliação                                   |
-| 🏪 **Vendedor**        | Atualizar o estado do pedido e acompanhar sua reputação                                        |
-| ⚙️ **Plataforma**      | Liberar avaliações conforme as regras, registrar avaliações, agregá-las e publicar a reputação |
-| 👀 **Outros usuários** | Consultar a reputação e as avaliações publicadas                                               |
+| Ator                    | Capacidades relevantes                                                                          |
+| ----------------------- | ----------------------------------------------------------------------------------------------- |
+| 👤 **Comprador**        | Decidir se avalia, escolher a nota e registrar sua avaliação                                    |
+| 🏪 **Vendedor**         | Atualizar o estado do pedido e acompanhar sua reputação                                         |
+| ⚙️ **Plataforma**       | Liberar avaliações conforme as regras, registrar avaliações, agregá-las e publicar a reputação  |
+| 👀 **Outros usuários**  | Consultar a reputação e as avaliações publicadas                                                |
 
 ---
 
@@ -214,27 +214,26 @@ Cada participante possui capacidades diferentes dentro da interação analisada.
 
 As decisões dos participantes dependem das informações que conseguem observar durante a interação.
 
-| Ator                   | Informações observáveis relevantes                                          |
-| ---------------------- | --------------------------------------------------------------------------- |
-| 👤 **Comprador**       | Estado do próprio pedido e possibilidade de avaliação                       |
-| 🏪 **Vendedor**        | Estado dos pedidos relacionados às suas vendas e sua reputação publicada    |
-| ⚙️ **Plataforma**      | Pedidos, avaliações registradas e dados utilizados na formação da reputação |
-| 👀 **Outros usuários** | Reputação pública e avaliações disponíveis                                  |
+| Ator                    | Informações observáveis relevantes                                           |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| 👤 **Comprador**        | Estado do próprio pedido e possibilidade de avaliação                        |
+| 🏪 **Vendedor**         | Estado dos pedidos relacionados às suas vendas e sua reputação publicada     |
+| ⚙️ **Plataforma**       | Pedidos, avaliações registradas e dados utilizados na formação da reputação  |
+| 👀 **Outros usuários**  | Reputação pública e avaliações disponíveis                                   |
 
 A reputação publicada funciona como o principal **sinal observável** entre os participantes.
 
 ```mermaid
 flowchart LR
-    C["👤 Comprador"]
-    V["🏪 Vendedor"]
-    P["⚙️ Plataforma"]
-    U["👀 Outros usuários"]
-
-    C -->|"avaliação"| P
-    V -->|"estado do pedido"| P
-    P -->|"reputação"| V
-    P -->|"reputação pública"| U
-    U -->|"observação do sinal"| V
+    C["👤 Comprador"]
+    V["🏪 Vendedor"]
+    P["⚙️ Plataforma"]
+    U["👀 Outros usuários"]
+    C -->|"avaliação"| P
+    V -->|"estado do pedido"| P
+    P -->|"reputação"| V
+    P -->|"reputação pública"| U
+    U -->|"observação do sinal"| V
 ```
 
 ### Assimetria de informação
