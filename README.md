@@ -413,7 +413,7 @@ Esse processo pode continuar enquanto a estrutura de incentivos permanecer favor
 
 ### 18.1 Diagrama do ciclo adaptativo
 
-<img src="diagramas/ciclo-adaptativo.png" alt="Ciclo adaptativo" width="500">
+<img src="diagramas/ciclo-adaptativo.png" alt="Ciclo adaptativo" width="400">
 
 **Figura 2 — Ciclo adaptativo entre ataque e defesa no subsistema de reputação.**
 
@@ -436,7 +436,7 @@ Os pontos não são independentes. **E2 habilita E1**, pois a alteração do est
 
 ### 19.1 Diagrama da superfície de ataque
 
-![Superfície de ataque](diagramas/superficie-ataque.png)
+<img src="diagramas/superficie-ataque.png" alt="Superfície de ataque" width="600">
 
 **Figura 3 — Superfície de ataque do subsistema de reputação do vendedor.**
 
